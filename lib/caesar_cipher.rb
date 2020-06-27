@@ -1,4 +1,13 @@
 def caesar_cipher(string, num)
+    def input_error?(string, num)
+        string.class != String || num.class != Integer
+    end
+
+    def error_message
+        "Error: Incorrect argument types given."
+    end
+   
+    return error_message if input_error?(string, num)
 
     coded_string = []
 
@@ -37,5 +46,3 @@ def caesar_cipher(string, num)
     
     coded_string.join("")
 end
-
-puts caesar_cipher("What a string!", 5)
